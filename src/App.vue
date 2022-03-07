@@ -1,10 +1,29 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/books">Book List</router-link> |
+    <button @click="gotoHomePage">Go to Home Page</button> |
+    <button @click="gotoAboutPage">Go To About Page</button>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+<script>
+
+export default {
+  name: 'RootComponent',
+  methods: {
+    gotoHomePage() {
+      this.$router.push('/');
+    },
+    gotoAboutPage() {
+      this.$router.push('/about');
+    }
+  }
+}
+</script>
+
 
 <style>
 #app {
